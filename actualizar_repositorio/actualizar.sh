@@ -16,7 +16,7 @@ fi
 LOCAL=$(runuser -u vboxuser -- git -C "$REPO" rev-parse HEAD)
 REMOTO=$(runuser -u vboxuser -- git -C "$REPO" rev-parse "origin/$BRANCH")
 
-# Actualizar únicamente si hay cambios
+# Actualizar únicamente si hay cambios existentes
 if [ "$LOCAL" != "$REMOTO" ]; then
     if runuser -u vboxuser -- git -C "$REPO" merge --ff-only "origin/$BRANCH"; then
         echo "Repositorio actualizado correctamente."
