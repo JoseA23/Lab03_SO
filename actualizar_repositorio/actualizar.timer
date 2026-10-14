@@ -1,0 +1,11 @@
+
+[Unit]
+Description=Comprobar cada cierto tiempo cambios en Github
+
+[Timer]
+OnBootSec=30s
+OnUnitActiveSec=1min
+Unit=actualizar.service
+
+[Install]
+WantedBy=timers.target

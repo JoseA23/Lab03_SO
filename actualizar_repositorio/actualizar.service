@@ -1,0 +1,9 @@
+
+[Unit]
+Description=Comprobar cambios en el repositorio GitHub
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash /usr/local/bin/actualizar.sh

@@ -1,0 +1,27 @@
+#Servicio para ejecutar automaticamente Hello World con Node.js y Express
+
+[Unit]
+#Descripcion
+Description=Hello World con Node.js y Express
+
+After=network.target
+
+[Service]
+#Se ejecuta en primer plano
+Type=simple
+
+#Usuario que ejecuta
+User=vboxuser
+
+#Directorio del proyecto
+WorkingDirectory=/home/vboxuser/hello-express
+
+#Comando a ejecutar
+ExecStart=/usr/bin/node /home/vboxuser/hello-express/app.js
+
+#Reincia el proceso si falla
+Restart=on-failure
+
+[Install]
+#Nivel de arranque en que se activara
+WantedBy=multi-user.target
